@@ -15,7 +15,6 @@
 }
 
 .btn-card {
-  background-color: var(--gray);
   color: var(--black-hover);
   border: none;
   cursor: pointer;
