@@ -77,6 +77,10 @@ body {
   font-size: 16px;
 }
 
+.search-nav::placeholder {
+  font-weight: 300;
+}
+
 .search-nav:focus {
   border: 1px solid var(--black-hover);
 }
