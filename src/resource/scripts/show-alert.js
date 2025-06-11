@@ -1,37 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".card");
+document.addEventListener("DOMContentLoaded", () => {
   const popup = document.querySelector(".popup");
   const popupText = document.querySelector(".description-popup");
   let timeoutId = null;
 
-  popup.style.opacity = "0";
-  popup.style.display = "none";
+  Object.assign(popup.style, {
+    opacity: "0",
+    display: "none",
+  });
 
-  cards.forEach((card) => {
-    card.addEventListener("click", function () {
-      const textToCopy = this.getAttribute("text-to-copy");
-      const fontName = this.querySelector(".title-card").textContent;
+  document.body.addEventListener("click", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
 
-      navigator.clipboard.writeText(textToCopy);
+    const textToCopy = card.getAttribute("text-to-copy");
+    const fontName = card.querySelector(".title-card").textContent;
 
-      popupText.innerHTML = `<strong>${fontName}</strong> has been copied!`;
-
-      popup.style.display = "flex";
-      setTimeout(() => {
-        popup.style.opacity = "1";
-      }, 10);
-
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-
-      timeoutId = setTimeout(() => {
-        popup.style.opacity = "0";
-        setTimeout(() => {
-          popup.style.display = "none";
-          timeoutId = null;
-        }, 300);
-      }, 3000);
+    navigator.clipboard.writeText(textToCopy).catch((err) => {
+      console.error("Failed to copy text: ", err);
     });
+
+    popupText.innerHTML = `<strong>${fontName}</strong> has been copied!`;
+
+    popup.style.display = "flex";
+    popup.style.opacity = "1";
+
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      popup.style.opacity = "0";
+      timeoutId = setTimeout(() => {
+        popup.style.display = "none";
+      }, 300);
+    }, 3000);
   });
 });
