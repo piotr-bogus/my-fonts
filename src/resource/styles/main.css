@@ -12,7 +12,7 @@
   --placeholder: #b0b0b0;
   --border: #bcc4d0;
   --lnk: #3b82f6;
-  --back: #E6F0FF30;
+  --back: #e6f0ff30;
 }
 
 * {
@@ -124,12 +124,8 @@ body {
 }
 
 @media (width <= 480px) {
-  .img-nav {
-    margin-left: 16px;
-  }
-
   .search-nav {
-    margin-right: 16px;
+    width: 192px;
   }
 
   .container-copyright {
