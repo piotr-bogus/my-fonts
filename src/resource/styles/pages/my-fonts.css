@@ -146,3 +146,64 @@
 .oswald {
   font-family: "Oswald", sans-serif;
 }
+
+.noto-sans {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.nunito-sans {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.nunito {
+  font-family: "Nunito", sans-serif;
+}
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+}
+
+.quicksans {
+  font-family: "Quicksand", sans-serif;
+}
+
+.ibm-plex-sans {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.manrope {
+  font-family: "Manrope", sans-serif;
+}
+
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.public-sans {
+  font-family: "Public Sans", sans-serif;
+}
+
+.popup {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.description-popup {
+  background-color: var(--white);
+  color: var(--black);
+  text-align: center;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+}
