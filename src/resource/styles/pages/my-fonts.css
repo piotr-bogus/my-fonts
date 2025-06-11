@@ -79,6 +79,23 @@
   -webkit-line-clamp: 5;
 }
 
+.popup {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.description-popup {
+  background-color: var(--white);
+  color: var(--black);
+  text-align: center;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
 @media (width <= 1024px) {
   .container-card {
     grid-template-columns: repeat(2, 1fr);
@@ -171,7 +188,7 @@
   font-family: "DM Sans", sans-serif;
 }
 
-.quicksans {
+.quicksand {
   font-family: "Quicksand", sans-serif;
 }
 
@@ -189,21 +206,4 @@
 
 .public-sans {
   font-family: "Public Sans", sans-serif;
-}
-
-.popup {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.description-popup {
-  background-color: var(--white);
-  color: var(--black);
-  text-align: center;
-  border: 1px solid var(--border);
-  padding: 8px 16px;
-  border-radius: 5px;
-  font-size: 16px;
 }
