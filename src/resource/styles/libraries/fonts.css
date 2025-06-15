@@ -1,28 +1,6 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"); */
-
 @font-face {
   font-family: "Inter";
-  src: url(./fonts/Inter/Inter-VariableFont_opsz\,wght.ttf);
+  src: url(./fonts/Inter/Inter-VariableFont_opsz\wght.ttf);
 }
 
 @font-face {
@@ -52,12 +30,12 @@
 
 @font-face {
   font-family: "Roboto";
-  src: url(./fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+  src: url(./fonts/Roboto/Roboto-VariableFont_wdth\wght.ttf);
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url(./fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+  src: url(./fonts/Open_Sans/OpenSans-VariableFont_wdth\wght.ttf);
 }
 
 @font-face {
@@ -72,12 +50,12 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url(./fonts/Noto_Sans/NotoSans-VariableFont_wdth\,wght.ttf);
+  src: url(./fonts/Noto_Sans/NotoSans-VariableFont_wdth\wght.ttf);
 }
 
 @font-face {
   font-family: "Nunito Sans";
-  src: url(./fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf);
+  src: url(./fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC\opsz\wdth\wght.ttf);
 }
 
 @font-face {
@@ -97,7 +75,7 @@
 
 @font-face {
   font-family: "DM Sans";
-  src: url(./fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf);
+  src: url(./fonts/DM_Sans/DMSans-VariableFont_opsz\wght.ttf);
 }
 
 @font-face {
@@ -107,7 +85,7 @@
 
 @font-face {
   font-family: "IBM Plex Sans";
-  src: url(./fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth\,wght.ttf);
+  src: url(./fonts/IBM_Plex_Sans/IBMPlexSans-VariableFont_wdth\wght.ttf);
 }
 
 @font-face {
