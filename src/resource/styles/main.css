@@ -33,7 +33,7 @@ body {
   position: sticky;
   border-bottom: 1px solid var(--border);
   top: 0;
-  box-shadow: #bcc4d0 0px 2px 32px;
+  box-shadow: 0px 2px 32px var(--border);
 }
 
 .nav {
