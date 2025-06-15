@@ -81,11 +81,7 @@
 }
 
 .popup {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
-  width: 100%;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
