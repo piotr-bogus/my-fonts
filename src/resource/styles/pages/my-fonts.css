@@ -1,0 +1,207 @@
+.container-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 64px;
+}
+
+.container-btn-menu {
+  background-color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  gap: 8px;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.btn-menu {
+  background-color: transparent;
+  color: var(--black-hover);
+  border: none;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.btn-menu:hover {
+  background-color: var(--gray-hover);
+  border: 1px solid var(--border);
+}
+
+.btn-menu:focus {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--border);
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 64px;
+  padding-top: 64px;
+}
+
+.card {
+  background-color: var(--gray);
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: transform 0.15s ease;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.card:hover {
+  background-color: var(--white);
+}
+
+.card:active {
+  transform: scale(0.9);
+}
+
+.title-card {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.description-card {
+  color: var(--black-hover);
+  overflow: hidden;
+  font-size: 16px;
+  line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.popup {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.description-popup {
+  background-color: var(--white);
+  color: var(--black);
+  text-align: center;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 8px 32px -8px var(--border);
+}
+
+@media (width <= 1024px) {
+  .container-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 480px) {
+  .container-menu {
+    padding-bottom: 32px;
+  }
+
+  .container-btn-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .container-card {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px;
+    padding-top: 32px;
+  }
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.libre-caslon-text {
+  font-family: "Libre Caslon Text", serif;
+}
+
+.courier-prime {
+  font-family: "Courier Prime", sans-serif;
+}
+
+.host-grotesk {
+  font-family: "Host Grotesk", sans-serif;
+}
+
+.mulish {
+  font-family: "Mulish", sans-serif;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+}
+
+.noto-sans {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.nunito-sans {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.nunito {
+  font-family: "Nunito", sans-serif;
+}
+
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+}
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+}
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
+.ibm-plex-sans {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.manrope {
+  font-family: "Manrope", sans-serif;
+}
+
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.public-sans {
+  font-family: "Public Sans", sans-serif;
+}

@@ -1,0 +1,145 @@
+@import url("reset.css");
+@import url("./libraries/fonts.css");
+@import url("./libraries/icons.css");
+
+:root {
+  --black: #000;
+  --black-hover: #444;
+  --white: #fff;
+  --gray: #eee;
+  --gray-hover: #ddd;
+  --focus: #60a5fa;
+  --placeholder: #b0b0b0;
+  --border: #bcc4d0;
+  --lnk: #3b82f6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+  touch-action: pan-y;
+}
+
+.container-nav {
+  background-color: var(--white);
+  position: sticky;
+  border-bottom: 1px solid var(--border);
+  top: 0;
+  box-shadow: 0 2px 32px var(--border);
+  z-index: 1;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 1024px;
+  padding-block: 16px;
+}
+
+.img-nav {
+  margin-right: auto;
+}
+
+.img-nav img {
+  height: 48px;
+}
+
+.container-search-nav {
+  position: relative;
+}
+
+.container-search-nav i {
+  color: var(--placeholder);
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.search-nav {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: "Inter", sans-serif;
+  outline: none;
+  border: 1px solid var(--border);
+  width: 256px;
+  padding: 8px 16px 8px 36px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.search-nav::placeholder {
+  font-weight: 300;
+}
+
+.search-nav:focus {
+  border: 1px solid var(--black-hover);
+}
+
+.search-nav:focus i {
+  color: var(--black);
+}
+
+.container {
+  margin: auto;
+  max-width: 1440;
+  padding: 64px;
+}
+
+.container-copyright {
+  background-color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-family: "Montserrat", sans-serif;
+  padding-block: 16px;
+}
+
+.description-copyright {
+  color: var(--white);
+  font-size: 14px;
+}
+
+.link-copyright:hover {
+  text-decoration: underline;
+}
+
+@media (width <= 1024px) {
+  .img-nav {
+    margin-left: 64px;
+  }
+
+  .search-nav {
+    margin-right: 64px;
+  }
+}
+
+@media (width <= 480px) {
+  .img-nav {
+    margin-left: 32px;
+  }
+
+  .search-nav {
+    margin-right: 32px;
+    width: 192px;
+  }
+
+  .container {
+    padding: 32px;
+  }
+
+  .container-copyright {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
