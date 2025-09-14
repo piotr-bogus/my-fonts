@@ -29,13 +29,6 @@
   background-color: var(--gray);
 }
 
-.btn-menu:focus {
-  background-color: var(--white);
-  color: var(--black);
-  border-color: var(--gray);
-  box-shadow: var(--box-shadow);
-}
-
 .container-card {
   display: grid;
   place-items: stretch;
