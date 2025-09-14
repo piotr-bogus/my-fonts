@@ -1,0 +1,116 @@
+.container-btn-menu {
+  background-color: var(--white-hv);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray);
+  gap: 4px;
+  padding: 8px;
+  border-radius: 999px;
+}
+
+.btn-menu {
+  background-color: transparent;
+  color: var(--gray-hv);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-size: 16px;
+}
+
+.btn-menu:hover {
+  background-color: var(--gray);
+}
+
+.btn-menu:focus {
+  background-color: var(--white);
+  color: var(--black);
+  border-color: var(--gray);
+  box-shadow: var(--box-shadow);
+}
+
+.container-card {
+  display: grid;
+  place-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background-color: var(--white-hv);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px solid var(--gray);
+  transition: all 0.2s ease;
+  gap: 8px;
+  padding: 24px;
+  border-radius: 32px;
+}
+
+.card:hover {
+  border-color: var(--gray-hv);
+}
+
+.card:active {
+  transform: scale(0.96);
+}
+
+.title-card {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.description-card {
+  color: var(--gray-hv);
+  overflow: hidden;
+  font-size: 16px;
+  line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.type-card {
+  background-color: var(--white);
+  color: var(--gray-hv);
+  text-transform: capitalize;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: var(--box-shadow);
+  font-size: 14px;
+}
+
+@media (width <= 1024px) {
+  .container-card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 480px) {
+  .container-btn-menu {
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 32px;
+  }
+
+  .btn-menu {
+    flex: 1;
+  }
+
+  .container-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
