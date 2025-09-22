@@ -1,31 +1,28 @@
-(function () {
-  "use strict";
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".card"));
 
-  const init = () => {
-    const cards = document.querySelectorAll(".card");
+  if (!cards.length) return;
 
-    if (!cards.length) return;
+  const formatClassName = (text) =>
+    text
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^a-z0-9_-]/g, "");
 
-    cards.forEach((card) => {
-      const titleEl = card.querySelector(".title-card");
-      const typeEl = card.querySelector(".type-card");
+  const addClassesAndFontAsync = async () => {
+    for (const card of cards) {
+      await new Promise((resolve) => requestAnimationFrame(resolve));
 
-      if (!titleEl || !typeEl) return;
+      const titleCard = card.querySelector(".title-card");
+      if (!titleCard) continue;
 
-      const className = titleEl.textContent.trim().toLowerCase().replace(/\s+/g, "-");
-
+      const className = formatClassName(titleCard.textContent);
       card.classList.add(className);
 
-      const fontType = typeEl.textContent.trim().toLowerCase() || "sans-serif";
-
-      card.style.fontFamily = `'${titleEl.textContent.trim()}', ${fontType}`;
-    });
+      card.style.fontFamily = `"${titleCard.textContent.trim()}", sans-serif`;
+    }
   };
 
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(init, { timeout: 200 });
-  } else {
-    document.addEventListener("DOMContentLoaded", init);
-    setTimeout(init, 0);
-  }
-})();
+  addClassesAndFontAsync();
+});

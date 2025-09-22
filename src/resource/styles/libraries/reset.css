@@ -3,7 +3,7 @@
 }
 
 ::placeholder {
-  color: var(--placeholder);
+  color: var(--gray-hv);
 }
 
 a {

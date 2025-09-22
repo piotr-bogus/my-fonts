@@ -1,135 +1,47 @@
-(async () => {
-  const whenIdle = (timeout = 200) =>
-    new Promise((resolve) => {
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(() => resolve(), { timeout });
-      } else {
-        window.addEventListener("DOMContentLoaded", () => setTimeout(resolve, 50), { once: true });
-      }
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = Array.from(document.querySelectorAll(".btn-menu"));
+  const cards = Array.from(document.querySelectorAll(".card"));
+  const input = document.querySelector(".inp-nav");
+
+  const setActiveStyle = (btn) => {
+    buttons.forEach((b) => {
+      b.style.backgroundColor = "";
+      b.style.color = "";
+      b.style.border = "";
+      b.style.boxShadow = "";
     });
+    btn.style.backgroundColor = "var(--white)";
+    btn.style.color = "var(--black)";
+    btn.style.border = "1px solid var(--gray)";
+    btn.style.boxShadow = "var(--box-sh)";
+  };
 
-  try {
-    await whenIdle(200);
+  const toggleCardVisibility = (card, visible) => {
+    card.style.display = visible ? "" : "none";
+  };
 
-    const btnContainer = document.querySelector(".container-btn-menu");
-    const cardContainer = document.querySelector(".container-card");
-    const input = document.querySelector(".inp-nav");
-
-    if (!btnContainer || !cardContainer) {
-      return;
-    }
-
-    (function injectActiveButtonStyles() {
-      if (document.getElementById("card-filter-active-style")) return;
-      const css = `
-        .btn-menu--active {
-          background-color: var(--white);
-          color: var(--black);
-          border-color: var(--gray);
-          box-shadow: var(--box-shadow);
-        }
-      `;
-      const style = document.createElement("style");
-      style.id = "card-filter-active-style";
-      style.type = "text/css";
-      style.appendChild(document.createTextNode(css));
-      document.head.appendChild(style);
-    })();
-
-    const buttons = Array.from(btnContainer.querySelectorAll(".btn-menu"));
-
-    const cardEls = Array.from(cardContainer.querySelectorAll(".card"));
-    const cache = cardEls.map((el) => {
-      const typeEl = el.querySelector(".type-card");
-      const typeRaw = typeEl && typeEl.textContent ? typeEl.textContent.trim() : "";
-      const typeLower = typeRaw.toLowerCase();
-      return { el, typeRaw, typeLower };
+  const filterCardsByType = async (type) => {
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+    cards.forEach((card) => {
+      const cardType = card.querySelector(".type-card").textContent;
+      toggleCardVisibility(card, type === "All" ? true : cardType === type);
     });
+  };
 
-    let activeButton = null;
-    const setActiveButton = (btn) => {
-      if (activeButton === btn) return;
-      if (activeButton) activeButton.classList.remove("btn-menu--active");
-      activeButton = btn;
-      if (activeButton) activeButton.classList.add("btn-menu--active");
-    };
+  const handleButtonClick = (btn) => {
+    const type = btn.textContent.trim();
+    setActiveStyle(btn);
+    filterCardsByType(type);
+    input.value = "";
+  };
 
-    const showAll = () => {
-      for (let i = 0; i < cache.length; i++) {
-        const { el } = cache[i];
-        if (el.style.display === "none") el.style.display = "";
-        if (el.getAttribute("aria-hidden") === "true") el.removeAttribute("aria-hidden");
-      }
-    };
+  buttons.forEach((btn) => btn.addEventListener("click", () => handleButtonClick(btn)));
 
-    const filterByType = (filterText) => {
-      const q = String(filterText || "")
-        .trim()
-        .toLowerCase();
+  input.addEventListener("input", () => {
+    const allBtn = buttons.find((b) => b.textContent.trim() === "All");
+    if (allBtn) setActiveStyle(allBtn);
+  });
 
-      if (!q || q === "all") {
-        showAll();
-        return;
-      }
-
-      for (let i = 0; i < cache.length; i++) {
-        const { el, typeLower } = cache[i];
-        if (typeLower === q) {
-          if (el.style.display === "none") el.style.display = "";
-          if (el.getAttribute("aria-hidden") === "true") el.removeAttribute("aria-hidden");
-        } else {
-          if (el.style.display !== "none") el.style.display = "none";
-          el.setAttribute("aria-hidden", "true");
-        }
-      }
-    };
-
-    const findDefaultButton = () => {
-      const byText = buttons.find((b) => {
-        const txt = (b.textContent || "").trim().toLowerCase();
-        return txt === "all" || txt === "wszystkie" || txt === "all";
-      });
-      return byText || buttons[0] || null;
-    };
-
-    btnContainer.addEventListener(
-      "click",
-      (ev) => {
-        const target = ev.target;
-        const btn = target.closest && target.closest(".btn-menu");
-        if (!btn || !btnContainer.contains(btn)) return;
-
-        const label = (btn.textContent || "").trim();
-
-        setActiveButton(btn);
-
-        filterByType(label);
-      },
-      { passive: true }
-    );
-
-    if (input) {
-      input.addEventListener(
-        "input",
-        (ev) => {
-          const val = ev.target && ev.target.value ? ev.target.value : "";
-          if (val.length > 0) {
-            const defaultBtn = findDefaultButton();
-            if (defaultBtn) setActiveButton(defaultBtn);
-          }
-        },
-        { passive: true }
-      );
-    }
-
-    const defaultBtn = findDefaultButton();
-    if (defaultBtn) {
-      setActiveButton(defaultBtn);
-      filterByType(defaultBtn.textContent || "All");
-    } else {
-      showAll();
-    }
-  } catch (err) {
-    console.error("Błąd inicjalizacji card-filter:", err);
-  }
-})();
+  const defaultBtn = buttons.find((b) => b.textContent.trim() === "All");
+  if (defaultBtn) handleButtonClick(defaultBtn);
+});
